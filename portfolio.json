@@ -1,0 +1,61 @@
+{
+    "projects": [
+        {
+            "title": "The Pennsylvania Army",
+            "subtitle": "Home webpage for a gaming community",
+            "details": "This is a custom responsive website design. It uses plain HTML, CSS, and does asynchronous SQL calls with JS Fetch/PHP.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/paarmy.PNG",
+            "url": "https://paarmy.com/",
+            "tags": "JavaScript, HTML, CSS, SQL, PHP"
+        },
+        {
+            "title": "Philly Sports Podcast",
+            "subtitle": "Future home page for a sports news podcast. Currently under development",
+            "details": " This is a full-stack project that utilizes a REST API using Express/Node.js for the backend. The frontend uses Angular 14, SCSS, and Typescript.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/phillysports.PNG",
+            "url": "https://juwanji.tbz.wtf/home",
+            "tags": "Express, Node.js, Typescript, SCSS, Angular, REST"
+        },
+        {
+            "title": "Tom Horgan Carpenter & Builder",
+            "subtitle": "Website design for Tom Horgan Carpenter & Builder",
+            "details": "This was a custom website design for a carpentry and home building company. It is a fully responsive and modern website design that uses HTML, CSS, and JavaScript.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/thorgan.PNG",
+            "url": "https://tomhorgancarpenter.com/?c=home",
+            "tags": "JavaScript, HTML, CSS"
+        },
+        {
+            "title": "#PA Army App",
+            "subtitle": "Application for in-game info as well as a guild management tool.",
+            "details": "This progressive web application uses, HTML, CSS, JS with XHR/Fetch calls to SQL. Depending on level of authentication more features are available and operates as CRUD application.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/pa-army-app.PNG",
+            "url": "https://app.paarmy.com/",
+            "tags": "JavaScript, HTML, CSS, SQL, PHP"
+            
+        },
+        {
+            "title": "Guild Roster Manager",
+            "subtitle": "Roster management app for a gaming community",
+            "details": "This is a desktop application that works in tandem with a Node.js discord bot using the discord.js library on both ends to give a web based application for managing members from a discord server.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/guild-roster.PNG",
+            "url": "https://app.paarmy.com/rosternull/",
+            "tags": "JavaScript, HTML, CSS, SQL, PHP, Node.js, Discord, Api"
+        },
+        {
+            "title": "MySwingCoach",
+            "subtitle": "Application for in-game info as well as a guild management tool.",
+            "details": "This progressive web application uses, HTML, CSS, JS with XHR/Fetch calls to SQL. Depending on level of authentication more features are available and operates as CRUD application.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/paarmy.PNG",
+            "url": "https://delcoswag.com/_web/geoDBtest/",
+            "tags": "JavaScript, HTML, CSS, SQL, PHP"
+        },
+        {
+            "title": "Discord Server Widget",
+            "subtitle": "Custom discord guild widget",
+            "details": " This is a simple discord widget utilizing the default discord widget JSON API. It is capable of displaying who is online, idle, or busy as well as the game or activity they are currently playing.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/widget.PNG",
+            "url": "https://paarmy.com/online/",
+            "tags": "JavaScript, HTML, CSS, JSON"
+        }
+    ]
+}

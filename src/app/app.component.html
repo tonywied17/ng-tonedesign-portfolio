@@ -1,0 +1,88 @@
+<header>
+  <div class="logo-wrapper">
+    <span class="logo">Tone Design</span>
+    <span class="subtitle">Tony Wiedman, Full-Stack Web Developer</span>
+  </div>
+
+  <div class="top-nav">
+    <span *ngIf="!sidenav.opened" class="top-nav-btns">
+      <a class="btn-nav" mat-button [routerLink]="'/home'" style="margin-right:0.3em;" (click)="mainTheme()">
+        <i class="fa-duotone fa-house-chimney nav-icn" style="margin-right: 8px"></i> Home
+      </a>
+  
+      <a class="btn-nav" mat-button [routerLink]="'/portfolio'" style="margin-right:0.3em;">
+        <i class="fa-duotone fa-rectangle-history nav-icn" style="margin-right: 8px;"></i>Portfolio
+      </a>
+  
+      <a class="btn-nav" mat-button [routerLink]="'/services'" style="margin-right:0.3em;">
+        <i class="fa-duotone fa-folder-open nav-icn" style="margin-right: 8px;"></i>Services
+      </a>
+      <!-- <a class="btn-nav" mat-button (click)="theme2();" style="margin-right:0.3em;">
+        <i class="fa-duotone fa-folder-open nav-icn" style="margin-right: 8px;"></i>Theme 2
+      </a> -->
+  
+  
+      <a style="margin-bottom:5px;" (click)="openSnackBar('Copied to clipboard!', 'Close')" [cdkCopyToClipboard]="'tonywied17@gmail.com'"
+        class="btn-nav email-nav email" mat-raised-button>
+        <i class="fa-thin fa-envelope" style="margin-right:3px;margin-bottom:-1px;"></i> tonywied17@gmail.com
+      </a>
+      <a class="resume" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary" style="margin-left:0.5em;border-radius: 5px !important;margin-bottom:5px;font-weight:200;"><i style="font-size:1.1rem;margin-right:3px;" class="fa-thin fa-file-pdf"></i> Resume</a>
+    </span>
+  
+  </div>
+</header>
+
+
+
+
+
+<button class="menu-btn" (mousedown)="sidenav.toggle();" mat-icon-button color="accent">
+  <i style="font-size: 2rem;" class="fa-solid fa-bars"></i>
+</button>
+
+
+
+<mat-sidenav-container hasBackdrop="false" class="side-nav" hasBackdrop="true">
+
+  <mat-sidenav #sidenav mode="side" position="end" class="inner-nav">
+
+    <mat-nav-list class="nav-list">
+
+      <a class="side-btns" mat-list-item [routerLink]="'/home'" (click)="mainTheme();sidenav.toggle()">
+        <i class="fa-duotone fa-house-chimney" style="margin-right: 8px"></i> Home
+      </a>
+      <a class="side-btns" mat-list-item [routerLink]="'/portfolio'" (click)="sidenav.toggle()">
+        <i class="fa-duotone fa-rectangle-history" style="margin-right: 8px;"></i> Portfolio
+      </a>
+      <a class="side-btns" mat-list-item [routerLink]="'/services'" (click)="sidenav.toggle()">
+        <i class="fa-duotone fa-folder-open" style="margin-right: 8px;"></i> Services
+      </a>
+
+      <a (click)="openSnackBar('Copied to clipboard!', 'Close')" [cdkCopyToClipboard]="'tonywied17@gmail.com'"
+        class="side-btns email-side-nav email" mat-raised-button style="margin:0.8em;margin-top: 1em !important;color: #000 !important;">
+        <i class="fa-thin fa-envelope" style="margin-right:3px;margin-bottom:-1px;"></i> tonywied17@gmail.com
+      </a>
+
+      <a class="side-btns email-side-nav resume" style="margin:0.8em;margin-top: 0 !important;color: #fff !important;" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary"><i style="font-size:1.1rem;margin-right:3px;" class="fa-thin fa-file-pdf"></i> Resume</a>
+      <!-- <a mat-list-item href="molexee.apk" (click)="sidenav.toggle()">
+          <mat-icon style="margin-right:0.5em;">android</mat-icon> Android App
+        </a> -->
+      <mat-divider></mat-divider>
+
+      <a class="side-btns" mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content class="content-side">
+
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<div class="bottom"></div>
+<div class="top"></div>

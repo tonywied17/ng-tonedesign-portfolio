@@ -1,0 +1,65 @@
+<!-- <header class="page">
+  <h1 class="page-title">Manage Articles</h1>
+  <div class="page-desc">This will be the page to list and manage all the articles.</div>
+</header> -->
+<h1 class="page-header">Recent Projects.</h1>
+
+<div class="content">
+  <div class="row1" *ngIf="loaded">
+
+    <div class="column-left">
+
+      <div class="row">
+
+
+        <div class="column" *ngFor="let project of projects">
+
+          <mat-card class="card">
+            <mat-card-header>
+              <div mat-card-avatar class="header-image"></div>
+              <mat-card-title>{{project.title}}</mat-card-title>
+              <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{project.image}}" alt="Photo of paarmy.com">
+            <mat-card-content>
+              <p>
+                {{project.details}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <a href="{{project.url}}" target="_blank" mat-button>View</a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+    <div class="column-right" style="position: sticky; top: 4.2em;">
+      <h1 style="border-bottom: 1px dotted rgb(253, 253, 253);">Filters <i class="fa-sharp fa-solid fa-filter-list"></i>
+      </h1>
+      <mat-card style="margin-bottom: 200px;">
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedValue">
+          <mat-radio-button value="1" (change)="getProjectTag('Angular')">Angular</mat-radio-button>
+          <mat-radio-button value="4" (change)="getProjectTag('Node.js')">Node.js</mat-radio-button>
+          <mat-radio-button value="2" (change)="getProjectTag('CSS')">CSS, SCSS</mat-radio-button>
+          <mat-radio-button value="3" (change)="getProjectTag('SQL')">SQL</mat-radio-button>
+          <mat-radio-button value="4" (change)="getProjectTag('PHP')">PHP</mat-radio-button>
+        </mat-radio-group>
+        <div style="right:0;position: absolute;margin-top: -2.5em;margin-right:1em;">
+          <button mat-button color="primary" (click)="getAllProjects();clearSortingFilters()"><i
+              class="fa-light fa-list"></i> View All</button>
+          <a color="primary" target="_blank" href="https://tonewebdesign.com/portfolio.json" mat-button
+            style="margin-right:0.5em;"><i class="fa-light fa-code"></i> JSON</a>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+</div>

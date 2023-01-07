@@ -1,0 +1,695 @@
+/**
+* Generated theme by Material Theme Generator
+* https://materialtheme.arcsine.dev
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzI1Njg5MSIsIj9lcjwjYmVkMmRlIiwiO2VyPCMxNjRiNzR$LCIlPmBePCNiMWIxYjEiLCI~ZXI8I2U4ZThlOCIsIjtlcjwjOTg5ODk4fiwid2Fybj5gXjwjZmQ1MTUxIiwiP2VyPCNmZWNiY2IiLCI7ZXI8I2ZjMzczN34sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz5mYWxzZSwidmVyc2lvbj4xM30=
+*/
+
+@use '@angular/material' as mat;
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+
+// Fonts
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+     
+$fontConfig: (
+  display-4: mat.define-typography-level(112px, 112px, 300, 'Poppins', -0.0134em),
+  display-3: mat.define-typography-level(56px, 56px, 400, 'Poppins', -0.0089em),
+  display-2: mat.define-typography-level(45px, 48px, 400, 'Poppins', 0.0000em),
+  display-1: mat.define-typography-level(34px, 40px, 400, 'Poppins', 0.0074em),
+  headline: mat.define-typography-level(24px, 32px, 400, 'Poppins', 0.0000em),
+  title: mat.define-typography-level(20px, 32px, 500, 'Poppins', 0.0075em),
+  subheading-2: mat.define-typography-level(16px, 28px, 400, 'Poppins', 0.0094em),
+  subheading-1: mat.define-typography-level(15px, 24px, 500, 'Poppins', 0.0067em),
+  body-2: mat.define-typography-level(14px, 24px, 500, 'Poppins', 0.0179em),
+  body-1: mat.define-typography-level(14px, 20px, 400, 'Poppins', 0.0179em),
+  button: mat.define-typography-level(14px, 14px, 500, 'Poppins', 0.0893em),
+  caption: mat.define-typography-level(12px, 20px, 400, 'Poppins', 0.0333em),
+  input: mat.define-typography-level(inherit, 1.125, 400, 'Poppins', 1.5px)
+);
+
+// Foreground Elements
+
+// Light Theme Text
+$dark-text: #000000;
+$dark-primary-text: rgba($dark-text, 0.87);
+$dark-accent-text: rgba($dark-primary-text, 0.54);
+$dark-disabled-text: rgba($dark-primary-text, 0.38);
+$dark-dividers: rgba($dark-primary-text, 0.12);
+$dark-focused: rgba($dark-primary-text, 0.12);
+
+$mat-light-theme-foreground: (
+  base:              black,
+  divider:           $dark-dividers,
+  dividers:          $dark-dividers,
+  disabled:          $dark-disabled-text,
+  disabled-button:   rgba($dark-text, 0.26),
+  disabled-text:     $dark-disabled-text,
+  elevation:         black,
+  secondary-text:    $dark-accent-text,
+  hint-text:         $dark-disabled-text,
+  accent-text:       $dark-accent-text,
+  icon:              $dark-accent-text,
+  icons:             $dark-accent-text,
+  text:              $dark-primary-text,
+  slider-min:        $dark-primary-text,
+  slider-off:        rgba($dark-text, 0.26),
+  slider-off-active: $dark-disabled-text,
+);
+
+// Dark Theme text
+$light-text: #ffffff;
+$light-primary-text: $light-text;
+$light-accent-text: rgba($light-primary-text, 0.7);
+$light-disabled-text: rgba($light-primary-text, 0.5);
+$light-dividers: rgba($light-primary-text, 0.12);
+$light-focused: rgba($light-primary-text, 0.12);
+
+$mat-dark-theme-foreground: (
+  base:              $light-text,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   rgba($light-text, 0.3),
+  disabled-text:     $light-disabled-text,
+  elevation:         black,
+  hint-text:         $light-disabled-text,
+  secondary-text:    $light-accent-text,
+  accent-text:       $light-accent-text,
+  icon:              $light-text,
+  icons:             $light-text,
+  text:              $light-text,
+  slider-min:        $light-text,
+  slider-off:        rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3),
+);
+
+// Background config
+// Light bg
+$light-background:    #fafafa;
+$light-bg-darker-5:   darken($light-background, 5%);
+$light-bg-darker-10:  darken($light-background, 10%);
+$light-bg-darker-20:  darken($light-background, 20%);
+$light-bg-darker-30:  darken($light-background, 30%);
+$light-bg-lighter-5:  lighten($light-background, 5%);
+$dark-bg-tooltip:     lighten(#2c2c2c, 20%);
+$dark-bg-alpha-4:     rgba(#2c2c2c, 0.04);
+$dark-bg-alpha-12:    rgba(#2c2c2c, 0.12);
+
+$mat-light-theme-background: (
+  background:               $light-background,
+  status-bar:               $light-bg-darker-20,
+  app-bar:                  $light-bg-darker-5,
+  hover:                    $dark-bg-alpha-4,
+  card:                     $light-bg-lighter-5,
+  dialog:                   $light-bg-lighter-5,
+  tooltip:                  $dark-bg-tooltip,
+  disabled-button:          $dark-bg-alpha-12,
+  raised-button:            $light-bg-lighter-5,
+  focused-button:           $dark-focused,
+  selected-button:          $light-bg-darker-20,
+  selected-disabled-button: $light-bg-darker-30,
+  disabled-button-toggle:   $light-bg-darker-10,
+  unselected-chip:          $light-bg-darker-10,
+  disabled-list-option:     $light-bg-darker-10,
+);
+
+// Dark bg
+$dark-background:     #2c2c2c;
+$dark-bg-lighter-5:   lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  background:               $dark-background,
+  status-bar:               $dark-bg-lighter-20,
+  app-bar:                  $dark-bg-lighter-5,
+  hover:                    $light-bg-alpha-4,
+  card:                     $dark-bg-lighter-5,
+  dialog:                   $dark-bg-lighter-5,
+  tooltip:                  $dark-bg-lighter-20,
+  disabled-button:          $light-bg-alpha-12,
+  raised-button:            $dark-bg-lighter-5,
+  focused-button:           $light-focused,
+  selected-button:          $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle:   $dark-bg-lighter-10,
+  unselected-chip:          $dark-bg-lighter-20,
+  disabled-list-option:     $dark-bg-lighter-10,
+);
+
+// Compute font config
+@include mat.core($fontConfig);
+
+// Theme Config
+
+body {
+  --primary-color: #256891;
+  --primary-lighter-color: #bed2de;
+  --primary-darker-color: #164b74;
+  --text-primary-color: #{$light-primary-text};
+  --text-primary-lighter-color: #{$dark-primary-text};
+  --text-primary-darker-color: #{$light-primary-text};
+}   
+$mat-primary: (
+  main: #256891,
+  lighter: #bed2de,
+  darker: #164b74,
+  200: #256891, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+$theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
+
+
+body {
+  --accent-color: #b1b1b1;
+  --accent-lighter-color: #e8e8e8;
+  --accent-darker-color: #989898;
+  --text-accent-color: #{$dark-primary-text};
+  --text-accent-lighter-color: #{$dark-primary-text};
+  --text-accent-darker-color: #{$dark-primary-text};
+}   
+$mat-accent: (
+  main: #b1b1b1,
+  lighter: #e8e8e8,
+  darker: #989898,
+  200: #b1b1b1, // For slide toggle,
+  contrast : (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $dark-primary-text,
+  )
+);
+$theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
+
+
+body {
+  --warn-color: #fd5151;
+  --warn-lighter-color: #fecbcb;
+  --warn-darker-color: #fc3737;
+  --text-warn-color: #{$dark-primary-text};
+  --text-warn-lighter-color: #{$dark-primary-text};
+  --text-warn-darker-color: #{$light-primary-text};
+}   
+$mat-warn: (
+  main: #fd5151,
+  lighter: #fecbcb,
+  darker: #fc3737,
+  200: #fd5151, // For slide toggle,
+  contrast : (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  )
+);
+$theme-warn: mat.define-palette($mat-warn, main, lighter, darker);
+;
+
+$theme: (
+  primary: $theme-primary,
+  accent: $theme-accent,
+  warn: $theme-warn,
+  is-dark: true,
+  foreground: $mat-dark-theme-foreground,
+  background: $mat-dark-theme-background,
+);
+$altTheme: (
+  primary: $theme-primary,
+  accent: $theme-accent,
+  warn: $theme-warn,
+  is-dark: false,
+  foreground: $mat-light-theme-foreground,
+  background: $mat-light-theme-background,
+);
+
+// Theme Init
+@include mat.all-component-themes($theme);
+
+.theme-alternate {
+  @include mat.all-component-themes($altTheme);
+}
+
+// Specific component overrides, pieces that are not in line with the general theming
+
+// Handle buttons appropriately, with respect to line-height
+
+
+
+
+
+
+:root {
+  color-scheme: dark;
+  --primary-color1: rgba(202, 209, 216, 0.898);
+  --secondary-color: rgba(82, 192, 255, 0.847);
+  --dark-color-1: rgba(9, 37, 63, 0.61);
+  --banner-photo: url(https://tbz.wtf/2022/October/28/_ROT/bg2.png);
+
+}
+
+[data-theme="test"] {
+  color-scheme: dark;
+  --primary-color1: rgba(0, 0, 0, 0.898);
+  --secondary-color: rgba(22, 95, 155, 0.847);
+  --dark-color-1: rgba(27, 27, 27, 0.61);
+  --banner-photo: url(https://tbz.wtf/2022/November/1/_WoA/test2.png);
+}
+
+
+* {
+  color-scheme: dark;
+
+}
+
+body {
+  font-family: 'Poppins';
+  -webkit-tap-highlight-color: transparent;
+  overflow-y: overlay;
+  margin:0;
+}
+
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 .65em;
+  min-width: 3em;
+  line-height: 36.4px
+}
+
+.mat-standard-chip {
+  padding: .5em .85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';
+
+  .mat-badge-content {
+    font-family: 'Poppins';
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.mat-tab-body-content {
+  overflow: hidden !important;
+}
+.mat-drawer-content{
+  overflow: overlay !important;
+}
+
+
+
+.page-header{
+  position: sticky;
+  top: 17px;
+  float:right;
+  filter: drop-shadow(5px 5px 10px #000);
+  font-weight: 200;
+  font-style: oblique;
+  z-index:1;
+  background: var(--dark-color-1);
+  padding: 0.5em;
+  width: fit-content;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  margin:0;
+  animation: page-header-right .2s ease 0s 1 normal forwards;
+}
+
+@keyframes page-header-left {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes page-header-right {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+
+.app-container {
+  max-height: calc(100vh - 220.2px);
+  min-height: calc(100vh - 220.2px);
+  padding: 2em;
+  overflow: overlay;
+  // background: rgb(66 66 66 / 22%);
+}
+
+.nav{
+  background: transparent !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .app-container {
+    min-height: calc(100vh - 104px);
+    padding: unset !important;
+
+  }
+  .page-header{
+    font-size:1.2rem !important;
+    animation: page-header-left .2s ease 0s 1 normal forwards;
+  }
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .nav {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    top: 0 !important;
+    position: sticky !important;
+    z-index: 2;
+    background: transparent !important;
+  }
+
+  footer {
+    display: none;
+  }
+  ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
+    width: 0px;
+    background: transparent !important; /* make scrollbar transparent */
+    }
+}
+
+mat-chip {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  padding-left: 8px !important;
+  padding-right: 15px !important;
+  font-size: 1.1rem !important;
+}
+
+.mat-drawer-backdrop {
+  filter: brightness(15%);
+}
+
+
+.mat-tab-label {
+  user-select: none;
+}
+
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--footer-color);
+    border-radius: 0.8rem;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #36363600;
+    border-radius: 0.8rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a3a00;
+  }
+
+
+.mat-tab-labels > .mat-tab-label:first-child {
+  display: none !important;
+}
+
+.mat-tab-nav-bar, .mat-tab-header {
+  border-bottom: 2px #303030c4 solid !important;
+}
+
+.mat-drawer-container{
+  background: unset !important;
+  
+}
+.mat-drawer{
+  background: #121212f0 !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex{
+  background: rgb(153 153 153 / 42%);
+  color: rgba(255, 255, 255, 0.703) !important;
+}
+
+mat-card {
+  background: var(--dark-color-1) !important;
+  color: rgba(255, 255, 255, 0.703) !important;
+}
+mat-card-title{
+  font-weight: 600 !important;
+  font-style:italic !important;
+  font-size:2rem !important;
+  color: var(--primary-color1) !important;
+}
+mat-card-subtitle{
+  font-weight: 200 !important;
+  font-size:1rem !important;
+  color: var(--secondary-color) !important;
+}
+mat-card-content{
+  padding:1em !important;
+  font-size:1.3rem !important;
+}
+.mat-snack-bar-container{
+  background: var(--dark-color-1) !important;
+  color: rgba(255, 255, 255, 0.703) !important;
+}
+.mat-form-field-empty.mat-form-field-label{
+  color: rgba(255, 255, 255, 0.703) !important;
+}
+
+.mat-form-field-ripple {
+  background-color: rgba(255, 255, 255, 0.703) !important;
+}
+.mat-simple-snackbar-action button {
+  color: var(--secondary-color) !important;
+}
+.mat-input-element {
+  caret-color: rgba(255, 255, 255, 0.703) !important;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.703) !important;
+}
+
+.mat-fab{
+  background-color: #474747e3 !important;
+  color: rgba(255, 255, 255, 0.897) !important;
+}
+
+.white-override{
+  color: rgba(255, 255, 255, 0.911) !important;
+}
+
+@media only screen and (max-width: 900px) {
+
+  mat-card-title{
+    font-size:1.2rem !important;
+  }
+  mat-card-subtitle{
+    font-size:1rem !important;
+  }
+  mat-card-content{
+    font-size:1rem !important;
+  }
+
+.content{
+  margin-left: unset !important;
+  margin-right: unset !important;
+  margin-top: 36px !important;
+
+}
+.row{
+
+}
+.page{
+  margin-top:2em;
+}
+.page-title{
+  margin-left: 10px;
+}
+.page-desc{
+  margin-left:13px;
+}
+.info{
+  height: 72px !important;
+  border-top-left-radius: unset !important;
+  border-top-right-radius: unset !important;
+}
+.page-header{
+  top: 10px !important;
+  left: 0  !important;
+  right: unset !important;
+  padding-left: 10px;
+  float: left;
+  color: #fff;
+  border-top-left-radius: unset !important;
+  border-bottom-left-radius: unset !important;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+}
+
+.img-right{
+  float:right;
+  width:25%;
+  height:auto;
+  margin: 0.5em;
+}
+
+.img-left{
+  float:left;
+  width:25%;
+  height:auto;
+  margin: 0.5em;
+}
+
+.md-sidenav-backdrop {
+  opacity: 0 !important;
+}
+
+md-sidenav.md-closed-add,
+md-sidenav.md-closed-remove {
+  -webkit-transition: all .4s cubic-bezier(0.25, .8, .25, 1) !important;
+  transition: all .4s cubic-bezier(0.25, .8, .25, 1) !important;
+}
+
+.mat-divider {
+  border-top-color: rgba(255, 255, 255, 0.644) !important;
+}
+
+
+.page-title{
+  color: #2c2c2cc5;
+  text-shadow: 1px 4px 22px rgba(164,164,164,1), 1px 1px 0px rgba(164,164,164,1);
+}
+
+.page-desc {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: -0.6em;
+  text-shadow: 1px 4px 22px rgba(164,164,164,1);
+  margin-left: 10px;
+}
+
+.page{
+  width: 100%;
+  margin-top: -0.7em;
+  margin-bottom: 1em;;
+}
+
+.mat-card-sm-image {
+  width: auto !important;
+  height: 80px;
+}
+
+.content{
+  margin: 1em;
+}
+@media screen and (max-width: 900px) {
+  .content{
+      max-width: unset !important;
+  }
+  .blog-card{
+      width: 100%
+  }
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  width: unset !important;
+}
+
+.top-nav{
+  position: absolute;
+  margin-top: 30px;
+  z-index: 2;
+  background:var(--dark-color-1);
+  width: auto;
+  padding: 0.3em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.mat-drawer {
+  background: rgb(0, 0, 0) !important;
+}
+
+.nav-icn{
+  color:var(--secondary-color);
+}
+.btn-nav{
+  color: var(--primary-color1);
+  font-size: 1.1rem !important;
+  z-index: 3;
+}
+.top-nav-btns{
+color:var(--primary-color1);
+font-size: 1.5rem !important;
+}
+.side-btns:hover{
+  background-color:var(--primary-color1);
+}
+.top{
+  position: absolute;
+  width:100%;
+  top: 0;
+  height: 60%;
+  z-index: -2;
+  padding:0;
+  margin: 0;
+  background: var(--banner-photo);
+  background-size:cover;
+  background-position-y: bottom;
+}
+.bottom{
+  position: fixed;
+  width:100%;
+  bottom: 0;
+  z-index:-3;
+  height: 80%;
+  background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(0,0,0,1) 62%, rgba(0,0,0,1) 87%, rgba(0,212,255,0) 100%);
+}
+.email-nav{
+  margin-right:0.3em;
+  font-weight:200;
+  font-size:1rem !important;
+  border-radius: 5px !important;
+  color:rgba(0,0,0);
+  background: var(--primary-color1);
+}
+
+.email-side-nav{
+  margin:0.8em;
+  font-weight:200;
+  font-size:1.5rem !important;
+  border-radius: 5px;
+  color: #000 !important;
+  background: var(--primary-color1);
+}

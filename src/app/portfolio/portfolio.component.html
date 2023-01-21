@@ -4,7 +4,7 @@
 </header> -->
 <h1 class="page-header">Recent Projects.</h1>
 
-<mat-card class="news-card !bg-[#101010]/80 shadow-lg m-4">
+<mat-card style="border-left: 5px solid #2c74a1ce !important;" class="news-card !bg-[#101010]/80 shadow-lg m-4">
   <mat-card-header>
     <mat-card-title>Current Projects</mat-card-title>
     <mat-card-subtitle>Some of my latest work.</mat-card-subtitle>
@@ -51,12 +51,12 @@
                 {{project.details}}
               </p>
             </mat-card-content>
-            <mat-card-actions>
-              <a href="{{project.url}}" target="_blank" mat-button>View</a>
+            <mat-card-actions align="end">
+              <a href="{{project.url}}" target="_blank" mat-stroked-button class="text-[1rem]"><i class="fa-duotone fa-binoculars"></i> View</a>
             </mat-card-actions>
           </mat-card>
-        </div>
 
+        </div>
 
 
 
@@ -71,9 +71,13 @@
         <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedValue">
           <mat-radio-button value="1" (change)="getProjectTag('Angular')">Angular</mat-radio-button>
           <mat-radio-button value="4" (change)="getProjectTag('Node.js')">Node.js</mat-radio-button>
+          <mat-radio-button value="6" (change)="getProjectTag('TypeScript')">TypeScript</mat-radio-button>
+          <mat-radio-button value="7" (change)="getProjectTag('Tailwind')">Tailwind</mat-radio-button>
           <mat-radio-button value="2" (change)="getProjectTag('CSS')">CSS, SCSS</mat-radio-button>
           <mat-radio-button value="3" (change)="getProjectTag('SQL')">SQL</mat-radio-button>
-          <mat-radio-button value="4" (change)="getProjectTag('PHP')">PHP</mat-radio-button>
+          <mat-radio-button value="8" (change)="getProjectTag('REST')">REST/API</mat-radio-button>
+          <mat-radio-button value="9" (change)="getProjectTag('JWT')">JWT/Auth</mat-radio-button>
+          <mat-radio-button value="5" (change)="getProjectTag('PHP')">PHP</mat-radio-button>
         </mat-radio-group>
         <div style="right:0;position: absolute;margin-top: -2.5em;margin-right:1em;">
           <button mat-button color="primary" (click)="getAllProjects();clearSortingFilters()"><i

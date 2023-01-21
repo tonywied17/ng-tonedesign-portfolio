@@ -4,7 +4,7 @@
 </header> -->
 <h1 class="page-header">Recent Projects.</h1>
 
-<mat-card style="border-left: 5px solid #2c74a1ce !important;" class="news-card !bg-[#101010]/80 shadow-lg m-4">
+<mat-card style="border-left: 5px solid #2c74a1ce !important;" class="!bg-[#101010]/80 shadow-lg m-4 select-none" id="top-box">
   <mat-card-header>
     <mat-card-title>Current Projects</mat-card-title>
     <mat-card-subtitle>Some of my latest work.</mat-card-subtitle>
@@ -17,7 +17,7 @@
         <span class="italic">(Express/Sequelize/Node.js, Spring/Java)</span> on the backend while using front-end frameworks 
         <span class="italic">(Angular and React)</span></p>
 
-      <p class="text-[1rem] font-[200]">You can view some of those project on my github repositories linked below.</p>
+      <p class="text-[1rem] font-[200]">You can view some of those projects in my github repositories or gallery below.</p>
 
       <a href="https://github.com/tonywied17?tab=repositories" target="_blank" mat-stroked-button><i class="fa-brands fa-github pr-2"></i>Github</a>
       
@@ -27,7 +27,7 @@
 </mat-card>
 
 
-<h1 class="px-4 italic text-[2.5rem]">Past Projects</h1>
+<h1 class="px-4 italic text-[2.5rem]">Recent Projects</h1>
 
 <div class="content">
   <div class="row1" *ngIf="loaded">
@@ -41,7 +41,6 @@
 
           <mat-card class="card">
             <mat-card-header>
-              <div mat-card-avatar class="header-image"></div>
               <mat-card-title>{{project.title}}</mat-card-title>
               <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
             </mat-card-header>

@@ -97,6 +97,9 @@
 
   }
 
+  #top-box{
+    animation: topfade .2s ease 0s 1 normal forwards;
+  }
 
   @keyframes load-news {
     0% {
@@ -107,3 +110,16 @@
       transform: scale(1);
     }
   }
+
+  @keyframes topfade {
+    0% {
+      opacity: 0;
+      transform: translateY(-150px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+

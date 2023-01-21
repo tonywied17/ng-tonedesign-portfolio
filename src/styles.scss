@@ -301,6 +301,8 @@ body {
   }
 }
 
+
+
 [hidden] {
   display: none !important;
 }
@@ -693,3 +695,7 @@ font-size: 1.5rem !important;
   color: #000 !important;
   background: var(--primary-color1);
 }
+
+
+@tailwind components;
+@tailwind utilities;

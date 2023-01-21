@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/_services/blog.service';
-import { Blog } from 'src/app/_models/blog.model';
 import { UserService } from '../_services/user.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
-  selector: 'app-blog-list',
-  templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.scss']
+  selector: 'portfolio',
+  templateUrl: './portfolio.component.html',
+  styleUrls: ['./portfolio.component.scss']
 })
-export class BlogListComponent implements OnInit {
+export class PortfolioComponent implements OnInit {
   filtered: any;
   projects: any;
   selectedValue: any;

@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
   onSubmit(): void {
     const { username, password } = this.form;
 
@@ -45,6 +46,7 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+  
 
   reloadPage(): void {
     window.location.reload();

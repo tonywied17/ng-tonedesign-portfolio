@@ -11,9 +11,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
+
   constructor(private http: HttpClient) { }
 
+  /**
+   * 
+   * @param username 
+   * @param password 
+   * @returns 
+   */
   login(username: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
       username,
@@ -21,6 +29,14 @@ export class AuthService {
     }, httpOptions);
   }
 
+
+  /**
+   * 
+   * @param username 
+   * @param email 
+   * @param password 
+   * @returns 
+   */
   register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'signup', {
       username,

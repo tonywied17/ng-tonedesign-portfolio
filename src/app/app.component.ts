@@ -11,10 +11,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
-
   bodyTag = document.body;
-
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -26,34 +25,32 @@ export class AppComponent implements OnInit {
   constructor(private tokenStorageService: TokenStorageService, private userService: UserService, private router: Router, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-
     this.getTitle();
-
     this.isLoggedIn = !!this.tokenStorageService.getToken();
-
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
       this.username = user.username;
-    }
-
-    
-    
+    } 
   }
 
+
+  /**
+   * get page title
+   * @returns page title
+   */
   getTitle(): void {
-
     this.titlePage = this.userService.pageTitle;
-
     return this.titlePage;
-    
   }
 
 
+  /**
+   * change theme based on param
+   * @param theme 
+   */
   theme(theme: any) {
     if (theme) {
       this.bodyTag.classList.remove(this.bodyTag.classList.toString())
@@ -64,11 +61,19 @@ export class AppComponent implements OnInit {
     }
   }
   
+
+  /**
+   * main theme switcher
+   */
   mainTheme() {
     this.bodyTag.classList.remove(this.bodyTag.classList.toString())
     this.bodyTag.classList.add("main");
   }
 
+
+  /**
+   * delete token storage
+   */
   logout(): void {
     this.tokenStorageService.signOut();
     this.router.navigate(['/home']);
@@ -78,11 +83,18 @@ export class AppComponent implements OnInit {
     
   }
 
+
+  /**
+   * 
+   * @param message 
+   * @param action 
+   */
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
       duration: 3000
     });
   }
+
 
   theme2(){
     document.documentElement.setAttribute('data-theme', 'test');

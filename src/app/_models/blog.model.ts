@@ -7,4 +7,4 @@ export class Blog {
     tag?: string;
     author?: string;
     published?: boolean;
-  }
+ }

@@ -8,6 +8,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
   templateUrl: './service-list.component.html',
   styleUrls: ['./service-list.component.scss']
 })
+
 export class ServiceListComponent implements OnInit {
   content?: string;
   currentUser: any;
@@ -19,7 +20,6 @@ export class ServiceListComponent implements OnInit {
   image: any;
   eagles = "https://tbz.wtf/2022/October/15/_3nT/birds.png";
   phillies = "https://tbz.wtf/2022/October/15/_fYS/phils.png";
-  
 
   message = '';
 

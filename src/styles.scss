@@ -402,7 +402,9 @@ body {
     background: transparent !important; /* make scrollbar transparent */
     }
 }
-
+mat-radio-button {
+  margin-left: 1.5em !important;
+}
 mat-chip {
   padding-top: 15px !important;
   padding-bottom: 15px !important;

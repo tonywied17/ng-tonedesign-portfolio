@@ -50,20 +50,46 @@ export class PortfolioComponent implements OnInit {
     this.selectedValue = null; // or false or ''
   }
 
-  async getProjectTag(tag: any) {
-
-
+  async getProjectDev(status: boolean){
     let resp = await fetch('assets/portfolio.json?' + this.rando());
 
     if (resp.ok) {
-
       this.filtered = await resp.json();
+      this.projects = [];
 
+      this.filtered.projects.forEach((proj: any) => {
+        console.log(proj.dev)
+
+        if(status === true){
+          if (proj.dev === true) {
+            console.log(proj)
+            this.projects.push(proj)
+            console.log(this.projects)
+          }
+        }else{
+          if (proj.dev === false) {
+            console.log(proj)
+            this.projects.push(proj)
+            console.log(this.projects)
+          }
+        }
+
+      })
+
+    }
+
+  }
+
+
+  async getProjectTag(tag: any) {
+    let resp = await fetch('assets/portfolio.json?' + this.rando());
+
+    if (resp.ok) {
+      this.filtered = await resp.json();
       this.projects = [];
 
       this.filtered.projects.forEach((proj: any) => {
         if (proj.tags.includes(tag)) {
-
           console.log(proj)
           this.projects.push(proj)
           console.log(this.projects)
@@ -79,7 +105,6 @@ export class PortfolioComponent implements OnInit {
       //   }
 
       // });
-
 
     }
   }

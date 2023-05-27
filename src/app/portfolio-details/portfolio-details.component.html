@@ -28,13 +28,27 @@
      
 
                 <mat-card-content>
+
+                    <div *ngIf="currentProject.dev" class="text-amber-200 text-lg !font-light !text-right hidden lg:block">
+                        <i class="fa-solid fa-traffic-cone !text-amber-600 pr-2"></i>Under Development
+                    </div>
+
+                    <div *ngIf="!currentProject.dev" class="text-green-200 text-lg !font-light !text-right hidden lg:block">
+                        <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
+                    </div>
                     
-                    <h3 class="mt-[2em]"><i class="fa-regular fa-file-circle-info pr-2"></i>Project Details</h3>
-                    <ol class="fa-ul text-[1rem] font-[200]">
+                    <h3 class="lg:mt-[-1em]"><i class="fa-regular fa-file-circle-info pr-2"></i>Project Details</h3>
 
-                        <li *ngIf="currentProject.dev" class="mt-[1.5em] text-amber-200"><span class="fa-li"><i class="fa-solid fa-traffic-cone !text-amber-600"></i></span><b class="mr-2">Under Development</b></li>
-                        <li *ngIf="!currentProject.dev" class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-check-to-slot"></i></span><b class="mr-2">Project Completed</b></li>
+                    <div *ngIf="currentProject.dev" class="text-amber-200 text-lg !font-light lg:hidden block">
+                        <i class="fa-solid fa-traffic-cone !text-amber-600 pr-2"></i>Under Development
+                    </div>
 
+                    <div *ngIf="!currentProject.dev" class="text-green-200 text-lg !font-light lg:hidden block">
+                        <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
+                    </div>
+
+
+                    <ol class="fa-ul text-[1rem] font-[200]">               
                         <li class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-circle-info !text-[#255f84]"></i></span><p class="mr-2 font-bold mb-[0]">Description</p>{{currentProject.details}}</li>
 
                         <li class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-link !text-[#255f84]"></i></span><b class="mr-2">View</b><a class="view" href="{{currentProject.url}}" target="_blank">{{currentProject.url}}</a></li>

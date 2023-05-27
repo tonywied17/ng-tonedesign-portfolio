@@ -61,28 +61,28 @@
       <h3 class="mt-[0]">Tags</h3>
 
       <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedValue">
-        <mat-radio-button value="1" (change)="getProjectTag('Angular')">Angular</mat-radio-button>
-        <mat-radio-button value="4" (change)="getProjectTag('Node.js')">Node.js</mat-radio-button>
-        <mat-radio-button value="6" (change)="getProjectTag('TypeScript')">TypeScript</mat-radio-button>
-        <mat-radio-button value="7" (change)="getProjectTag('Tailwind')">Tailwind</mat-radio-button>
+        <mat-radio-button value="1" (change)="getProjectTag('Angular');clearSortingFilters2()">Angular</mat-radio-button>
+        <mat-radio-button value="4" (change)="getProjectTag('Node.js');clearSortingFilters2()">Node.js</mat-radio-button>
+        <mat-radio-button value="6" (change)="getProjectTag('TypeScript');clearSortingFilters2()">TypeScript</mat-radio-button>
+        <mat-radio-button value="7" (change)="getProjectTag('Tailwind');clearSortingFilters2()">Tailwind</mat-radio-button>
         <!-- <mat-radio-button value="2" (change)="getProjectTag('CSS')">CSS, SCSS</mat-radio-button> -->
         <!-- <mat-radio-button value="3" (change)="getProjectTag('SQL')">SQL</mat-radio-button> -->
-        <mat-radio-button value="8" (change)="getProjectTag('REST')">REST/API</mat-radio-button>
+        <mat-radio-button value="8" (change)="getProjectTag('REST');clearSortingFilters2()">REST/API</mat-radio-button>
         <!-- <mat-radio-button value="9" (change)="getProjectTag('JWT')">JWT/Auth</mat-radio-button> -->
-        <mat-radio-button value="5" (change)="getProjectTag('PHP')">PHP</mat-radio-button>
+        <mat-radio-button value="5" (change)="getProjectTag('PHP');clearSortingFilters2()">PHP</mat-radio-button>
       </mat-radio-group>
 
 
       <h3>Development Status</h3>
 
-      <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedValue">
-        <mat-radio-button value="1" (change)="getProjectDev(false)">Completed</mat-radio-button>
-        <mat-radio-button value="4" (change)="getProjectDev(true)">In Development</mat-radio-button>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedValue2">
+        <mat-radio-button value="1" (change)="getProjectDev(false);clearSortingFilters();">Completed</mat-radio-button>
+        <mat-radio-button value="4" (change)="getProjectDev(true);clearSortingFilters();">In Development</mat-radio-button>
       </mat-radio-group>
 
 
       <div class="lg:right-0 lg:absolute lg:mt-[-2.5em] lg:mr-[1em] mt-[1em]">
-        <button mat-button color="primary" (click)="getAllProjects();clearSortingFilters()"><i
+        <button mat-button color="primary" (click)="getAllProjects();clearSortingFilters();clearSortingFilters2()"><i
             class="fa-light fa-list"></i> View All</button>
         <a color="primary" target="_blank" href="https://tonewebdesign.com/assets/portfolio.json" mat-button
           style="margin-right:0.5em;"><i class="fa-light fa-code"></i> JSON</a>

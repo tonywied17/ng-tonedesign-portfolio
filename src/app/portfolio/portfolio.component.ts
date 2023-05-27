@@ -11,6 +11,7 @@ export class PortfolioComponent implements OnInit {
   filtered: any;
   projects: any;
   selectedValue: any;
+  selectedValue2: any;
   loaded: any;
 
   constructor() { }
@@ -44,39 +45,44 @@ export class PortfolioComponent implements OnInit {
     }
   }
 
-
-
   clearSortingFilters() {
     this.selectedValue = null; // or false or ''
   }
 
+  clearSortingFilters2() {
+    this.selectedValue2 = null;
+  }
+
   async getProjectDev(status: boolean){
-    let resp = await fetch('assets/portfolio.json?' + this.rando());
 
-    if (resp.ok) {
-      this.filtered = await resp.json();
-      this.projects = [];
 
-      this.filtered.projects.forEach((proj: any) => {
-        console.log(proj.dev)
+      let resp = await fetch('assets/portfolio.json?' + this.rando());
 
-        if(status === true){
-          if (proj.dev === true) {
-            console.log(proj)
-            this.projects.push(proj)
-            console.log(this.projects)
+      if (resp.ok) {
+        this.filtered = await resp.json();
+        this.projects = [];
+  
+        this.filtered.projects.forEach((proj: any) => {
+          console.log(proj.dev)
+  
+          if(status === true){
+            if (proj.dev === true) {
+              console.log(proj)
+              this.projects.push(proj)
+              console.log(this.projects)
+            }
+          }else{
+            if (proj.dev === false) {
+              console.log(proj)
+              this.projects.push(proj)
+              console.log(this.projects)
+            }
           }
-        }else{
-          if (proj.dev === false) {
-            console.log(proj)
-            this.projects.push(proj)
-            console.log(this.projects)
-          }
-        }
+  
+        })
+  
+      }
 
-      })
-
-    }
 
   }
 

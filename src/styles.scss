@@ -252,7 +252,7 @@ $altTheme: (
   color-scheme: dark;
   --primary-color1: rgba(202, 209, 216, 0.898);
   --secondary-color: rgba(82, 192, 255, 0.847);
-  --dark-color-1: rgba(9, 37, 63, 0.61);
+  --dark-color-1: linear-gradient(to right, rgba(9, 37, 63, 1.0), rgba(9, 37, 63, 0.2));
   --banner-photo: url(https://tbz.wtf/2022/October/28/_ROT/bg2.png);
 
 }

@@ -3,7 +3,7 @@
     <div class="select-none grid grid-cols-1 lg:grid-cols-5 lg:gap-10 w-full !mx-[unset]">
 
         <div class="lg:col-start-1 lg:col-span-3">
-            <mat-card class="news-card">
+            <mat-card class="news-card lg:!px-[2em]">
                 <mat-card-title>{{currentProject.title}}
                     <button class="!mt-[2em] md:float-right !hidden md:!inline-block" [routerLink]="'/portfolio/'" target="_blank" mat-stroked-button><i class="fa-solid fa-arrow-left pr-2"></i>Back to Projects</button>
                 </mat-card-title>
@@ -23,7 +23,7 @@
 
 
         <div class="lg:col-start-4 lg:col-span-2 md:sticky md:top-0 md:self-start">
-            <mat-card style="border-left: 5px solid #2c74a1ce !important;"
+            <mat-card style="border-left: 5px solid #2c74a1ce !important;background: #101010d2 !important;"
                 class="news-card !bg-[#101010]/80 shadow-lg select-none" id="top-box">
      
 

@@ -46,25 +46,12 @@
 	}
 }
 
-
-
-
-
   .card {
     width: auto;
-    transition: all .2s ease;
+    transition: all .2s ease !important;
     animation: load-news 200ms ease 0s 1 normal forwards;
   }
 
-  .card:hover{
-    filter: drop-shadow(5px 2px 4px rgba(0, 0, 0, 0.41));
-  }
-
-  .card:active{
-    filter: brightness(130%);
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-  }
   
   .header-image {
     background-image: url('https://cdn.cnetcontent.com/a9/b3/a9b3ec43-cb38-4f38-8bf8-be5957720f96.jpg');

@@ -31,7 +31,7 @@ export class PortfolioComponent implements OnInit {
 
   async getAllProjects() {
 
-    let resp = await fetch('https://tonewebdesign.com/portfolio.json?' + this.rando());
+    let resp = await fetch('assets/portfolio.json?' + this.rando());
 
     this.loaded = true;
 
@@ -39,7 +39,7 @@ export class PortfolioComponent implements OnInit {
       let json = await resp.json();
 
       this.projects = json.projects;
-      console.log(json.projects.sort(this.mixer))
+      // console.log(json.projects.sort(this.mixer))
 
     }
   }
@@ -53,7 +53,7 @@ export class PortfolioComponent implements OnInit {
   async getProjectTag(tag: any) {
 
 
-    let resp = await fetch('https://tonewebdesign.com/portfolio.json?' + this.rando());
+    let resp = await fetch('assets/portfolio.json?' + this.rando());
 
     if (resp.ok) {
 

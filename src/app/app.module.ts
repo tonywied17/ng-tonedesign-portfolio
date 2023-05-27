@@ -16,6 +16,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ServiceListComponent } from './our-services/service-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material-module';
+import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MaterialModule} from './material-module';
     HomeComponent,
     ProfileComponent,
     PortfolioComponent,
-    ServiceListComponent
+    ServiceListComponent,
+    PortfolioDetailsComponent
   ],
   imports: [
     MaterialModule,

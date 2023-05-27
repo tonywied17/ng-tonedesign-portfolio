@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ServiceListComponent } from './our-services/service-list.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'services', component: ServiceListComponent },
   { path: 'portfolio', component: PortfolioComponent },
+  { path: 'portfolio/:id', component: PortfolioDetailsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

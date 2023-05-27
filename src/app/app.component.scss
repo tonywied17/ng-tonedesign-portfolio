@@ -5,6 +5,9 @@ width: 100vw;
 overflow: overlay;
 }
 
+.active{
+  background-color: #1010109f;
+}
 .menu-btn{
   position: absolute;
   z-index: 4;

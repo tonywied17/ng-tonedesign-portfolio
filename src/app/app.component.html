@@ -6,15 +6,15 @@
 
   <div class="top-nav">
     <span *ngIf="!sidenav.opened" class="top-nav-btns">
-      <a class="btn-nav" mat-button [routerLink]="'/home'" style="margin-right:0.3em;" (click)="mainTheme()">
+      <a class="btn-nav" mat-button [routerLink]="'/home'" style="margin-right:0.3em;" (click)="mainTheme()" routerLinkActive="active">
         <i class="fa-duotone fa-house-chimney nav-icn" style="margin-right: 8px"></i> Home
       </a>
   
-      <a class="btn-nav" mat-button [routerLink]="'/portfolio'" style="margin-right:0.3em;">
+      <a class="btn-nav" mat-button [routerLink]="'/portfolio'" style="margin-right:0.3em;" routerLinkActive="active">
         <i class="fa-duotone fa-rectangle-history nav-icn" style="margin-right: 8px;"></i>Portfolio
       </a>
   
-      <a class="btn-nav" mat-button [routerLink]="'/services'" style="margin-right:0.3em;">
+      <a class="btn-nav" mat-button [routerLink]="'/services'" style="margin-right:0.3em;" routerLinkActive="active">
         <i class="fa-duotone fa-folder-open nav-icn" style="margin-right: 8px;"></i>Services
       </a>
       <!-- <a class="btn-nav" mat-button (click)="theme2();" style="margin-right:0.3em;">
@@ -22,10 +22,10 @@
       </a> -->
   
   
-      <a style="margin-bottom:5px;" (click)="openSnackBar('Copied to clipboard!', 'Close')" [cdkCopyToClipboard]="'tonywied17@gmail.com'"
+      <!-- <a style="margin-bottom:5px;" (click)="openSnackBar('Copied to clipboard!', 'Close')" [cdkCopyToClipboard]="'tonywied17@gmail.com'"
         class="btn-nav email-nav email" mat-raised-button>
         <i class="fa-thin fa-envelope" style="margin-right:3px;margin-bottom:-1px;"></i> tonywied17@gmail.com
-      </a>
+      </a> -->
       <!-- <a href="https://github.com/" mat-raised-button style="max-width:20px !important;background-color:#171515 !important;border-radius: 5px !important;"><i class="fa-brands fa-github"></i></a> -->
       <a class="resume" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary" style="margin-left:0.5em;border-radius: 5px !important;margin-bottom:5px;font-weight:200;"><i style="font-size:1.1rem;margin-right:3px;" class="fa-thin fa-file-pdf"></i> Resume</a>
     </span>

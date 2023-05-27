@@ -1,0 +1,69 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "The Pennsylvania Army",
+            "subtitle": "Home webpage for a gaming community",
+            "details": "This website uses an abundance of technology starting with node.js, express, and sequelize on the backend for the REST API. For the front end it utilized Angular, TypeScript, and Tailwind CSS.",
+            "image": "https://tbz.wtf/2022/November/27/_QrT/paarmy.png",
+            "url": "https://paarmy.com/",
+            "repo":"https://github.com/tonywied17/ng-paarmy.com",
+            "dev": false,
+            "tags": "JavaScript, HTML, CSS, SQL, REST, Angular, Node.js, TypeScript, Tailwind"
+        },
+        {
+            "id": 2,
+            "title": "Philly Sports Podcast",
+            "subtitle": "Future home page for a sports news podcast. Currently under development",
+            "details": "This project aim's to be a blog and podcast management system, as well as place to view content.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/phillysports.PNG",
+            "url": "https://juwanji.tbz.wtf/home",
+            "repo":"https://github.com/tonywied17/ng-juwanji, https://github.com/tonywied17/express-juwanji-api",
+            "dev": true,
+            "tags": "Express, Node.js, TypeScript, SCSS, Angular, REST, JWT"
+        },
+        {
+            "id": 3,
+            "title": "#PA Army App v1",
+            "subtitle": "Application for in-game info as well as a guild management tool.",
+            "details": "This progressive web application uses, HTML, CSS, JS with XHR/Fetch calls to SQL. Depending on level of authentication more features are available and operates as CRUD application.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/pa-army-app.PNG",
+            "url": "https://app.paarmy.com/",
+            "dev": false,
+            "tags": "JavaScript, HTML, CSS, SQL, PHP"
+            
+        },
+        {
+            "id": 4,
+            "title": "#PA Army App v2",
+            "subtitle": "A reboot project of the original application.",
+            "details": "A newer guild management tool using the Angular framework, and JWT authentication.",
+            "image": "https://tbz.wtf/files/2023/January/21/_iZL/pa2.png",
+            "url": "https://app.paarmy.com/beta",
+            "repo": "https://github.com/tonywied17/ng-paapp2, https://github.com/tonywied17/express-paarmy-api",
+            "dev": true,
+            "tags": "Angular, TypeScript, REST, Tailwind, JWT, Node.js"
+            
+        },
+        {
+            "id": 5,
+            "title": "Guild Roster Manager",
+            "subtitle": "Roster management app for a gaming community",
+            "details": "This is a desktop application that works in tandem with a Node.js discord bot using the discord.js library on both ends to give a web based application for managing members from a discord server.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/guild-roster.PNG",
+            "url": "https://app.paarmy.com/rosternull/",
+            "dev": false,
+            "tags": "JavaScript, HTML, CSS, SQL, PHP, Node.js, REST"
+        },
+        {
+            "id": 6,
+            "title": "MySwingCoach",
+            "subtitle": "Application for in-game info as well as a guild management tool.",
+            "details": "This was a web application that allowed users to filter through a database of professional golf trainers based on their location. It used fun technologies like Google Geolocation API, and the haversine formula.",
+            "image": "https://tbz.wtf/2022/November/1/_3JK/swingcoach.PNG",
+            "url": "https://delcoswag.com/_web/geoDBtest/",
+            "dev": false,
+            "tags": "JavaScript, HTML, CSS, SQL, PHP"
+        }
+    ]
+}

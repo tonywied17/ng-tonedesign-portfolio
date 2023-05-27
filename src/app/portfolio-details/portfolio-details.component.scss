@@ -27,7 +27,14 @@
     width:100%;
     
 }
-
+.proj-image:hover{
+    filter: grayscale(100%);
+    transform: scale(1.01);
+}
+.proj-image:active{
+    margin-top:1em;
+    margin-left:1em;
+}
 .post-btn:hover{
     background-color: rgb(109, 109, 109);
     color:rgb(226, 226, 226);

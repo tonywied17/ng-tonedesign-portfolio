@@ -32,26 +32,27 @@
                     <div *ngIf="currentProject.dev" class="text-amber-200 text-lg !font-light !text-right hidden lg:block">
                         <i class="fa-solid fa-traffic-cone !text-amber-600 pr-2"></i>Under Development
                     </div>
-
                     <div *ngIf="!currentProject.dev" class="text-green-200 text-lg !font-light !text-right hidden lg:block">
                         <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
                     </div>
                     
-                    <h3 class="lg:mt-[-1em]"><i class="fa-regular fa-file-circle-info pr-2"></i>Project Details</h3>
+                    <h3 class="lg:mt-[-1em] mt-[-5px]"><i class="fa-regular fa-file-circle-info pr-2"></i>Project Details</h3>
 
-                    <div *ngIf="currentProject.dev" class="text-amber-200 text-lg !font-light lg:hidden block">
+                    <div *ngIf="currentProject.dev" class="text-amber-200 text-sm !font-light lg:hidden block">
                         <i class="fa-solid fa-traffic-cone !text-amber-600 pr-2"></i>Under Development
                     </div>
-
-                    <div *ngIf="!currentProject.dev" class="text-green-200 text-lg !font-light lg:hidden block">
+                    <div *ngIf="!currentProject.dev" class="text-green-200 text-sm !font-light lg:hidden block">
                         <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
                     </div>
 
 
                     <ol class="fa-ul text-[1rem] font-[200]">               
-                        <li class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-circle-info !text-[#255f84]"></i></span><p class="mr-2 font-bold mb-[0]">Description</p><span class="!select-text">{{currentProject.details}}</span></li>
-
-                        <li class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-link !text-[#255f84]"></i></span><b class="mr-2">View</b><a class="view !select-text" href="{{currentProject.url}}" target="_blank">{{currentProject.url}}</a></li>
+                        <li class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-circle-info !text-[#255f84]"></i></span><p class="mr-2 font-bold mb-[0]">Description</p><span class="!select-text ml-[-2px] inline-block">{{currentProject.details}}</span></li>
+                        
+                        <li class="mt-[1.5em]"><span class="fa-li"><i class="fa-solid fa-globe !text-[#255f84]"></i></span>
+                            <p class="mr-2 font-bold mb-[0]">Live Deployment</p>
+                            <span class="!select-text ml-[-2px] inline-block"><a class="view !select-text" href="{{currentProject.url}}" target="_blank">{{currentProject.url}}</a></span>
+                        </li>
                     </ol>
 
                     <h3 class="mt-[2em]"><i class="fa-brands fa-github pr-2"></i>View on GitHub</h3>
@@ -66,7 +67,7 @@
                     
                     <h3 class="mt-[2em]"><i class="fa-solid fa-code pr-2"></i>Tech Stack Tags</h3>
 
-                    <div class="fa-ul text-[1rem] font-[200]">
+                    <div class="text-[1rem] font-[200] w-full">
                         
                         <span class="m-2 inline-block !select-text" *ngFor="let tag of tags"><i class="fa-sharp fa-solid fa-tag !text-[#255f84]"></i> {{tag}}</span>
      

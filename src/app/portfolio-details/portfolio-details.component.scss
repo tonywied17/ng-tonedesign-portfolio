@@ -20,7 +20,7 @@
     width: auto;
     transition: all .2s ease;
     animation: load-news 200ms ease 0s 1 normal forwards;
-    margin-top:1.5em;
+    word-wrap: break-word;
     padding: 1.5em;
   }
 .toggle-btns{
@@ -55,7 +55,8 @@
         max-width: 100% !important;
     }
     .news-card{
-        margin-top: 42px!important;
+        margin-top: 1em !important;
+        padding: 1em !important;
     }
     
 }

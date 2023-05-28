@@ -28,13 +28,13 @@
 </mat-card> -->
 
 <div class="lg:mx-[2em] mx-[1em]">
-<div class="grid grid-cols-1 lg:grid-cols-5 gap-8 w-full lg:w-[unset]">
+<div class="grid grid-cols-1 lg:grid-cols-6 gap-8 w-full lg:w-[unset]">
 
-  <div class="lg:col-span-3 lg:col-start-1 mt-[2em]">
+  <div class="lg:col-span-4 lg:col-start-1 mt-[2em]">
 
     <div *ngFor="let project of projects">
 
-      <mat-card class="card my-6">
+      <mat-card class="card lg:mb-[2em] mb-[1em]">
         <mat-card-header>
           <mat-card-title>{{project.title}}</mat-card-title>
           <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
@@ -53,7 +53,7 @@
 
 
 
-  <div class="lg:col-start-4 lg:col-span-2 lg:sticky lg:top-0 lg:self-start">
+  <div class="lg:col-start-5 lg:col-span-2 lg:sticky lg:top-0 lg:self-start">
     <h1 style="border-bottom: 1px dotted rgb(253, 253, 253);">Filters <i class="fa-sharp fa-solid fa-filter-list"></i>
     </h1>
     <mat-card style="border-left: 5px solid #09253fce !important;background: #101010d2 !important;" class="accent-card shadow-lg select-none mb-[200px] !px-[2em]">
@@ -81,7 +81,7 @@
       </mat-radio-group>
 
 
-      <div class="lg:right-0 lg:absolute lg:mt-[-2.5em] lg:mr-[1em] mt-[1em]">
+      <div class="lg:text-right mt-[1.5em]">
         <button mat-button color="primary" (click)="getAllProjects();clearSortingFilters();clearSortingFilters2()"><i
             class="fa-light fa-list"></i> View All</button>
         <a color="primary" target="_blank" href="https://tonewebdesign.com/assets/portfolio.json" mat-button

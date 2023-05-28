@@ -18,12 +18,10 @@
 }
 .news-card {
     width: auto;
-
     transition: all .2s ease;
     animation: load-news 200ms ease 0s 1 normal forwards;
-    margin: 2em;
-    margin-top:1.5em;
-    
+    word-wrap: break-word;
+    padding: 1.5em;
   }
 .toggle-btns{
     width:100%;
@@ -50,7 +48,19 @@
         max-width: 100% !important;
     }
     .news-card{
-        margin-top: 42px!important;
+        margin-top: 1em !important;
+        padding: 1em !important;
     }
     
 }
+
+a.view {
+    color: #94c1db;
+    text-decoration: none;
+    transition: color 0.2s;
+    border-bottom: #4f7a94 dotted 1px;
+  }
+  
+  a.view:hover {
+    color: #6ba6cf;
+  }

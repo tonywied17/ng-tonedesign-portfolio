@@ -34,7 +34,7 @@
 
     <div *ngFor="let project of projects">
 
-      <mat-card class="card lg:mb-[2em] mb-[1em]">
+      <mat-card class="card lg:mb-[2em] mb-[1em]" style="border-left: 5px solid #4da9dece !important;background: #101010d2 !important;">
         <mat-card-header>
           <mat-card-title>{{project.title}}</mat-card-title>
           <mat-card-subtitle>{{project.subtitle}}</mat-card-subtitle>
@@ -43,8 +43,8 @@
           {{project.details}}
         </mat-card-content>
         <mat-card-actions align="end">
-          <button [routerLink]="'/portfolio/' + project.id" target="_blank" mat-stroked-button class="text-[1.1rem] !px-[15px]">
-            <i class="fa-sharp fa-solid fa-folder-magnifying-glass pr-2"></i> All Details</button>
+          <button [routerLink]="'/portfolio/' + project.id" target="_blank" mat-button class="text-[1.1rem] !px-[15px]" style="background: linear-gradient(to right, rgb(16, 60, 100), rgba(9, 37, 63, 1.0));">
+            <i class="fa-sharp fa-solid fa-folder-magnifying-glass pr-2"></i> More Details</button>
         </mat-card-actions>
       </mat-card>
 
@@ -56,7 +56,7 @@
   <div class="lg:col-start-5 lg:col-span-2 lg:sticky lg:top-0 lg:self-start">
     <h1 style="border-bottom: 1px dotted rgb(253, 253, 253);">Filters <i class="fa-sharp fa-solid fa-filter-list"></i>
     </h1>
-    <mat-card style="border-left: 5px solid #09253fce !important;background: #101010d2 !important;" class="accent-card shadow-lg select-none mb-[200px] !px-[2em]">
+    <mat-card style="border-left: 5px solid #175b83ce !important;background: linear-gradient(to right, rgba(9, 37, 63, 1.0), rgba(9, 37, 63, 0.2));" class="accent-card shadow-lg select-none mb-[200px] !px-[2em]">
 
       <h3 class="mt-[0]">Tags</h3>
 

@@ -59,10 +59,12 @@
 
                     <p *ngIf="repos.length === 0;" class="text-[1rem] font-[200] italic">No github repo's found for this project.</p>
                     <ol class="fa-ul text-[1rem] font-[200]" *ngFor="let repo of repos">
-                        
-                        <li><span class="fa-li"><i class="fa-solid fa-link !text-[#255f84]"></i></span><a class="view !select-text" href="{{repo}}" target="_blank">{{repo}}</a></li>
-     
-                    </ol>
+                        <li>
+                          <span class="fa-li"><i class="fa-solid fa-link !text-[#255f84]"></i></span>
+                          <a class="view !select-text" href="{{repo.repoUrl}}" target="_blank">{{repo.repoUrl}}</a>
+                          <span class="!select-text block text-sm">updated {{repo.pushedAt}}</span> <!-- Display the 'pushedAt' value -->
+                        </li>
+                      </ol>
 
                     
                     <h3 class="mt-[2em]"><i class="fa-solid fa-code pr-2"></i>Tech Stack Tags</h3>

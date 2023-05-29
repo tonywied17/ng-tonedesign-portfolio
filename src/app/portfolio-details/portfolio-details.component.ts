@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../_services/token-storage.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-portfolio-details',
@@ -21,7 +22,8 @@ export class PortfolioDetailsComponent implements OnInit {
 
   constructor(
     private token: TokenStorageService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient
     ,) { }
 
   ngOnInit(): void {
@@ -29,45 +31,45 @@ export class PortfolioDetailsComponent implements OnInit {
     this.getProject(paramID)
   }
 
-
-  /**
-   * 
-   * @param projID 
-   */
+/**
+ * 
+ * @param projID 
+ */
   async getProject(projID: any) {
     let resp = await fetch('assets/portfolio.json?' + this.rando());
     this.loaded = true;
     if (resp.ok) {
       let json = await resp.json();
       this.projects = json.projects;
-      console.log(json.projects)
-      this.projects.forEach((proj: any) => {
-        if(proj.id == projID) {
+      console.log(json.projects);
+
+      this.projects.forEach(async (proj: any) => {
+        if (proj.id == projID) {
           this.currentProject = proj;
+
           // Get Repo's comma separated to array
-          if(proj.repo){
-            if(proj.repo.includes(',')) {
+          if (proj.repo) {
+            if (proj.repo.includes(',')) {
               let splitRepos = proj.repo.split(', ');
-              console.log(splitRepos)
-              this.repos = splitRepos
-            }else{
-              console.log(proj.repo)
-                this.repos.push(proj.repo);
+              this.repos = await Promise.all(splitRepos.map((repoUrl: string) => this.getApiEndpoint(repoUrl))); // Wait for all promises to resolve
+            } else {
+              this.repos = [await this.getApiEndpoint(proj.repo)]; // Wait for the promise to resolve
             }
-          }else{
+          } else {
             this.repos = [];
           }
+
           // Get tech stack tags comma separated to array
-          if(proj.tags){
-            if(proj.tags.includes(',')) {
+          if (proj.tags) {
+            if (proj.tags.includes(',')) {
               let splitTags = proj.tags.split(', ');
-              console.log(splitTags)
-              this.tags = splitTags
-            }else{
-              console.log(proj.tags)
-                this.tags.push(proj.tags);
+              console.log(splitTags);
+              this.tags = splitTags;
+            } else {
+              console.log(proj.tags);
+              this.tags.push(proj.tags);
             }
-          }else{
+          } else {
             this.tags = [];
           }
         }
@@ -75,6 +77,44 @@ export class PortfolioDetailsComponent implements OnInit {
     }
   }
 
+/**
+ * 
+ * @param repoUrl 
+ * @returns 
+ */
+  async getApiEndpoint(repoUrl: string) {
+    const repoPath = repoUrl.replace("https://github.com/", "");
+    const apiEndpoint = `https://api.github.com/repos/${repoPath}`;
+
+    try {
+      const response: any = await this.http.get(apiEndpoint).toPromise();
+      const pushedAt = response['pushed_at'];
+
+      const lastPushed = new Date(pushedAt);
+      const now = new Date();
+      const diffMinutes = Math.floor((now.getTime() - lastPushed.getTime()) / (1000 * 60));
+
+      let formattedTime = "";
+      if (diffMinutes < 1) {
+        formattedTime = "just now";
+      } else if (diffMinutes === 1) {
+        formattedTime = "1 minute ago";
+      } else if (diffMinutes < 60) {
+        formattedTime = `${diffMinutes} minutes ago`;
+      } else if (diffMinutes < 1440) {
+        const diffHours = Math.floor(diffMinutes / 60);
+        formattedTime = `${diffHours} hours ago`;
+      } else {
+        const diffDays = Math.floor(diffMinutes / 1440);
+        formattedTime = `${diffDays} days ago`;
+      }
+
+      return { url: apiEndpoint, repoUrl: repoUrl, pushedAt: formattedTime };
+    } catch (error) {
+      console.error('Error fetching repository details:', error);
+      return null;
+    }
+  }
 
   /**
    * 
@@ -84,15 +124,15 @@ export class PortfolioDetailsComponent implements OnInit {
    * @param h 
    * @returns 
    */
-  open(url: any, title: any, w: any, h: any){
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+  open(url: any, title: any, w: any, h: any) {
+    var left = (screen.width / 2) - (w / 2);
+    var top = (screen.height / 2) - (h / 2);
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
   }
-
   
   rando() {
     return Math.floor(Math.random() * 100000);
   }
+
 
 }

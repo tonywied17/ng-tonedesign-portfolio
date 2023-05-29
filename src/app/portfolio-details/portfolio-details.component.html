@@ -57,12 +57,26 @@
 
                     <h3 class="mt-[2em]"><i class="fa-brands fa-github pr-2"></i>View on GitHub</h3>
 
-                    <p *ngIf="repos.length === 0;" class="text-[1rem] font-[200] italic">No github repo's found for this project.</p>
+                    <div *ngIf="repos.length === 0;">
+
+                        <ol class="fa-ul text-[1rem] font-[200]">
+                            <li>
+                              <span class="fa-li"><i class="fa-solid fa-empty-set !text-red-600 !text-sm"></i></span> <span class="!text-red-200">No github repo's found for this project.</span>
+                            </li>
+                          </ol>
+                    </div>
+
                     <ol class="fa-ul text-[1rem] font-[200]" *ngFor="let repo of repos">
                         <li>
                           <span class="fa-li"><i class="fa-solid fa-link !text-[#255f84]"></i></span>
                           <a class="view !select-text" href="{{repo.repoUrl}}" target="_blank">{{repo.repoUrl}}</a>
-                          <span class="!select-text block text-sm">updated {{repo.pushedAt}}</span> <!-- Display the 'pushedAt' value -->
+
+                          <span class="!select-text block text-[.79rem] text-[#b7d9ed]/60 lg:py-1 lg:text-left text-right pt-[5px] mb-[2em]">
+                            <span class="lg:hidden inline-block">updated </span>
+                            <span class="hidden lg:inline-block">Last updated </span>
+                            {{repo.pushedAt}}<span class="hidden lg:inline-block">.</span>
+                            </span>
+
                         </li>
                       </ol>
 

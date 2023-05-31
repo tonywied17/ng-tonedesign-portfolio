@@ -689,6 +689,11 @@ font-size: 1.5rem !important;
   background: var(--primary-color1);
 }
 
+.mat-sidenav-container {
+  width: 100%;
+  max-width: 100%;
+}
+
 ::selection {
   color: #88d7f7;
   background: #a34a3c;

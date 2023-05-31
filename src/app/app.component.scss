@@ -1,7 +1,7 @@
 
 .side-nav {
-width: 100vw;
-
+width: 100%;
+max-width: 100%;
 overflow: overlay;
 }
 
@@ -95,13 +95,18 @@ header{
   }
 
   .side-nav {
-    width: 100% !important;
-    overflow: unset !important;
-    height: unset !important;
+    width: 100vw;
+    overflow-x: hidden; /* Added property to hide horizontal overflow */
+    overflow-y: overlay; /* Updated property to handle vertical overflow */
   }
-
-  .inner-nav{
-    width: 100% !important;
+  
+  .inner-nav {
+    position: fixed !important; /* Changed to fixed position to prevent overflowing */
+    top: 0;
+    left: 0; /* Changed to left position to align with the left edge of the window */
+    width: 500px;
+    height: 100vh; /* Set the height to match the viewport height */
+    z-index: 3;
   }
 
   .content-side{

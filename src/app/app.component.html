@@ -7,18 +7,18 @@
   <div class="top-nav">
     <span *ngIf="!sidenav.opened" class="top-nav-btns">
       <a class="btn-nav" mat-button [routerLink]="'/home'" style="margin-right:0.3em;" (click)="mainTheme()" routerLinkActive="active">
-        <i class="fa-duotone fa-house-chimney nav-icn" style="margin-right: 8px"></i> Home
+        <i class="fa-solid fa-house nav-icn" style="margin-right: 8px"></i> Home
       </a>
   
       <a class="btn-nav" mat-button [routerLink]="'/portfolio'" style="margin-right:0.3em;" routerLinkActive="active">
-        <i class="fa-duotone fa-rectangle-history nav-icn" style="margin-right: 8px;"></i>Portfolio
+        <i class="fa-solid fa-boxes-stacked nav-icn" style="margin-right: 8px;"></i>Portfolio
       </a>
   
       <a class="btn-nav" mat-button [routerLink]="'/services'" style="margin-right:0.3em;" routerLinkActive="active">
-        <i class="fa-duotone fa-folder-open nav-icn" style="margin-right: 8px;"></i>Services
+        <i class="fa-solid fa-folder-open nav-icn" style="margin-right: 8px;"></i>Services
       </a>
       <!-- <a class="btn-nav" mat-button (click)="theme2();" style="margin-right:0.3em;">
-        <i class="fa-duotone fa-folder-open nav-icn" style="margin-right: 8px;"></i>Theme 2
+        <i class="fa-solid fa-folder-open nav-icn" style="margin-right: 8px;"></i>Theme 2
       </a> -->
   
   
@@ -27,7 +27,7 @@
         <i class="fa-thin fa-envelope" style="margin-right:3px;margin-bottom:-1px;"></i> tonywied17@gmail.com
       </a> -->
       <!-- <a href="https://github.com/" mat-raised-button style="max-width:20px !important;background-color:#171515 !important;border-radius: 5px !important;"><i class="fa-brands fa-github"></i></a> -->
-      <a class="resume" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary" style="margin-left:0.5em;border-radius: 5px !important;margin-bottom:5px;font-weight:200;"><i style="font-size:1.1rem;margin-right:3px;" class="fa-thin fa-file-pdf"></i> Resume</a>
+      <a class="resume" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary" style="margin-left:0.5em;border-radius: 5px !important;margin-bottom:5px;font-weight:200;"><i style="font-size:1.1rem;margin-right:3px;" class="fa-regular fa-file-pdf"></i> Resume</a>
     </span>
   
   </div>
@@ -48,21 +48,21 @@
     <mat-nav-list class="nav-list">
 
       <a class="side-btns" mat-list-item [routerLink]="'/home'" (click)="mainTheme();sidenav.toggle()">
-        <i class="fa-duotone fa-house-chimney" style="margin-right: 8px"></i> Home
+        <i class="fa-solid fa-house" style="margin-right: 8px"></i> Home
       </a>
       <a class="side-btns" mat-list-item [routerLink]="'/portfolio'" (click)="sidenav.toggle()">
-        <i class="fa-duotone fa-rectangle-history" style="margin-right: 8px;"></i> Portfolio
+        <i class="fa-solid fa-boxes-stacked" style="margin-right: 8px;"></i> Portfolio
       </a>
       <a class="side-btns" mat-list-item [routerLink]="'/services'" (click)="sidenav.toggle()">
-        <i class="fa-duotone fa-folder-open" style="margin-right: 8px;"></i> Services
+        <i class="fa-solid fa-folder-open" style="margin-right: 8px;"></i> Services
       </a>
 
       <a (click)="openSnackBar('Copied to clipboard!', 'Close')" [cdkCopyToClipboard]="'tonywied17@gmail.com'"
         class="side-btns email-side-nav email" mat-raised-button style="margin:0.8em;margin-top: 1em !important;color: #000 !important;">
-        <i class="fa-thin fa-envelope" style="margin-right:3px;margin-bottom:-1px;"></i> tonywied17@gmail.com
+        <i class="fa-regular fa-envelope" style="margin-right:3px;margin-bottom:-1px;"></i> tonywied17@gmail.com
       </a>
 
-      <a class="side-btns email-side-nav resume" style="margin:0.8em;margin-top: 0 !important;color: #fff !important;" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary"><i style="font-size:1.1rem;margin-right:3px;" class="fa-thin fa-file-pdf"></i> Resume</a>
+      <a class="side-btns email-side-nav resume" style="margin:0.8em;margin-top: 0 !important;color: #fff !important;" href="https://tonewebdesign.com/resume.pdf" target="_blank" mat-raised-button color="primary"><i style="font-size:1.1rem;margin-right:3px;" class="fa-regular fa-file-pdf"></i> Resume</a>
       <!-- <a mat-list-item href="molexee.apk" (click)="sidenav.toggle()">
           <mat-icon style="margin-right:0.5em;">android</mat-icon> Android App
         </a> -->

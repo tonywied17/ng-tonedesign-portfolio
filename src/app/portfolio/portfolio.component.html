@@ -44,7 +44,7 @@
         </mat-card-content>
         <mat-card-actions align="end">
           <button [routerLink]="'/portfolio/' + project.id" target="_blank" mat-button class="text-[1.1rem] !px-[15px]" style="background: linear-gradient(to right, rgb(16, 60, 100), rgba(9, 37, 63, 1.0));">
-            <i class="fa-sharp fa-solid fa-folder-magnifying-glass pr-2"></i> More Details</button>
+            <i class="fa-solid fa-magnifying-glass pr-2"></i> More Details</button>
         </mat-card-actions>
       </mat-card>
 
@@ -83,9 +83,9 @@
 
       <div class="lg:text-right mt-[1.5em]">
         <button mat-button color="primary" (click)="getAllProjects();clearSortingFilters();clearSortingFilters2()"><i
-            class="fa-light fa-list"></i> View All</button>
+            class="fa-solid fa-list"></i> View All</button>
         <a color="primary" target="_blank" href="https://tonewebdesign.com/assets/portfolio.json" mat-button
-          style="margin-right:0.5em;"><i class="fa-light fa-code"></i> JSON</a>
+          style="margin-right:0.5em;"><i class="fa-solid fa-code"></i> JSON</a>
       </div>
     </mat-card>
   </div>

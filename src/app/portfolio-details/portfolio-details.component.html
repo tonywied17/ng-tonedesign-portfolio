@@ -28,9 +28,8 @@
      
 
                 <mat-card-content>
-
                     <div *ngIf="currentProject.dev" class="text-amber-200 text-lg !font-light !text-right hidden lg:block">
-                        <i class="fa-solid fa-traffic-cone !text-amber-600 pr-2"></i>Under Development
+                        <i class="fa-solid fa-trowel-bricks !text-amber-600 pr-2"></i>Under Development
                     </div>
                     <div *ngIf="!currentProject.dev" class="text-green-200 text-lg !font-light !text-right hidden lg:block">
                         <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
@@ -39,7 +38,7 @@
                     <h3 class="lg:mt-[-1em] mt-[-5px]"><i class="fa-regular fa-file-circle-info pr-2"></i>Project Details</h3>
 
                     <div *ngIf="currentProject.dev" class="text-amber-200 text-sm !font-light lg:hidden block">
-                        <i class="fa-solid fa-traffic-cone !text-amber-600 pr-2"></i>Under Development
+                        <i class="fa-solid fa-trowel-bricks !text-amber-600 pr-2"></i>Under Development
                     </div>
                     <div *ngIf="!currentProject.dev" class="text-green-200 text-sm !font-light lg:hidden block">
                         <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed

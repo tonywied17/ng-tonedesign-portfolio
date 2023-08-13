@@ -1,3 +1,14 @@
+/*
+ * File: c:\Users\tonyw\Desktop\Portfolio NG\ng-tonedesign-portfolio\src\app\portfolio-details\portfolio-details.component.ts
+ * Project: c:\Users\tonyw\Desktop\Portfolio NG\ng-tonedesign-portfolio
+ * Created Date: Saturday May 27th 2023
+ * Author: Tony Wiedman
+ * -----
+ * Last Modified: Sun August 13th 2023 10:10:31 
+ * Modified By: Tony Wiedman
+ * -----
+ * Copyright (c) 2023 Tone Web Design, Molex
+ */
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -16,6 +27,10 @@ export class PortfolioDetailsComponent implements OnInit {
 
   @Input() viewMode = false;
   @Input() currentProject: any;
+
+  images: string[] = [];
+  mainImageSrc: string = '';
+  currentIndex: number = 0;
 
   repos: any[] = [];
   tags: any[] = [];
@@ -47,6 +62,12 @@ export class PortfolioDetailsComponent implements OnInit {
         if (proj.id == projID) {
           this.currentProject = proj;
 
+          if (proj.image) {
+            this.images = proj.image.split(', '); // Split the image URLs
+            this.currentProject.mainImage = this.images[0]; // Set the first image as the main image
+          }
+
+
           // Get Repo's comma separated to array
           if (proj.repo) {
             if (proj.repo.includes(',')) {
@@ -76,6 +97,38 @@ export class PortfolioDetailsComponent implements OnInit {
       });
     }
   }
+
+  /**
+   * @method changeMainImage
+   * @description Change the main image of the project
+   * @param imgSrc 
+   */
+  changeMainImage(imgSrc: string): void {
+    this.currentProject.mainImage = imgSrc;
+    this.currentIndex = this.images.indexOf(imgSrc);
+}
+
+  
+
+  prevImage(): void {
+    if (this.currentIndex > 0) {
+        this.currentIndex--;
+    } else {
+        // Loop around to the last image
+        this.currentIndex = this.images.length - 1;
+    }
+    this.changeMainImage(this.images[this.currentIndex]);
+}
+
+nextImage(): void {
+    if (this.currentIndex < this.images.length - 1) {
+        this.currentIndex++;
+    } else {
+        // Loop around to the first image
+        this.currentIndex = 0;
+    }
+    this.changeMainImage(this.images[this.currentIndex]);
+}
 
 /**
  * 

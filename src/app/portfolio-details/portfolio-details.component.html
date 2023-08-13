@@ -1,4 +1,15 @@
 
+<!--
+File: c:\Users\tonyw\Desktop\Portfolio NG\ng-tonedesign-portfolio\src\app\portfolio-details\portfolio-details.component.html
+Project: c:\Users\tonyw\Desktop\Portfolio NG\ng-tonedesign-portfolio
+Created Date: Saturday May 27th 2023
+Author: Tony Wiedman
+-----
+Last Modified: Sun August 13th 2023 10:23:50 
+Modified By: Tony Wiedman
+-----
+Copyright (c) 2023 Tone Web Design, Molex
+-->
 <div class="lg:m-[2em] mx-[1em]">
     <div class="select-none grid grid-cols-1 lg:grid-cols-5 lg:gap-10 w-full !mx-[unset]">
 
@@ -11,7 +22,30 @@
                 <mat-card-content>
 
 
-                    <img (click)="open(currentProject.image, currentProject.title, 1500, 868)" [src]="currentProject.image" class="proj-image h-auto max-w-full rounded-lg shadow-none transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 cursor-zoom-in">
+                    <div class="image-gallery">
+                        <!-- Large main image -->
+                        <div class="main-image-container">
+                            <button (click)="prevImage()" class="arrow-btn left-arrow"><i class="fa-solid fa-arrow-left"></i></button>
+                            <img (click)="open(currentProject.mainImage, currentProject.title, 1500, 868)" 
+                                 [src]="currentProject.mainImage" 
+                                 alt="Main Image" 
+                                 class="main-image proj-image h-auto max-w-full rounded-lg shadow-none transition-all duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 cursor-zoom-in">
+                            <button (click)="nextImage()" class="arrow-btn right-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        
+                        <!-- Thumbnails -->
+                        <div class="thumbnails">
+                            <img *ngFor="let img of images" 
+                                 [src]="img" 
+                                 (click)="changeMainImage(img)" 
+                                 [class.active]="img === currentProject.mainImage"
+                                 alt="Thumbnail" 
+                                 class="thumbnail">
+                        </div>
+                    </div>
+                    
+                    
+                    
 
                 </mat-card-content>
                 <mat-card-actions align="end">
@@ -29,7 +63,7 @@
 
                 <mat-card-content>
                     <div *ngIf="currentProject.dev" class="text-amber-200 text-lg !font-light !text-right hidden lg:block">
-                        <i class="fa-solid fa-trowel-bricks !text-amber-600 pr-2"></i>Under Development
+                        <i class="fa-solid fa-pen-ruler !text-amber-600 pr-2"></i>Under Development
                     </div>
                     <div *ngIf="!currentProject.dev" class="text-green-200 text-lg !font-light !text-right hidden lg:block">
                         <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
@@ -38,7 +72,7 @@
                     <h3 class="lg:mt-[-1em] mt-[-5px]"><i class="fa-regular fa-file-circle-info pr-2"></i>Project Details</h3>
 
                     <div *ngIf="currentProject.dev" class="text-amber-200 text-sm !font-light lg:hidden block">
-                        <i class="fa-solid fa-trowel-bricks !text-amber-600 pr-2"></i>Under Development
+                        <i class="fa-solid fa-pen-ruler !text-amber-600 pr-2"></i>Under Development
                     </div>
                     <div *ngIf="!currentProject.dev" class="text-green-200 text-sm !font-light lg:hidden block">
                         <i class="fa-solid fa-check-to-slot !text-green-600 pr-2"></i>Project Completed
